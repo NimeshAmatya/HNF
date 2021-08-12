@@ -1,0 +1,36 @@
+*{
+	padding:10px;
+}
+#newHouse{
+	color: white;
+	width: 200px;
+	padding: 10px;
+	background: red;
+	border-radius: 25%;
+}
+#houserent{
+	color: red;
+}
+
+.product-bottom{
+	text-align: center;
+	font-size: 12px;
+}
+
+.product-top{
+	padding: 10px;
+	background: black;
+	color: white;
+	border-radius: 5%;
+}
+#price{
+	text-align: right;
+	padding: 5px;
+	font-size: 18px;
+}
+
+.underline{
+	color: red;
+	width: 25%;
+	height:2px;
+}

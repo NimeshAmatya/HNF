@@ -1,0 +1,55 @@
+{% block content %}
+
+{% include 'ums/navbar.html'%}
+
+<table>
+
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Field</th>
+            <!--<th>Download</th>-->
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    {% if forms %}
+    <tbody>
+        {% for form in forms %}
+        <tr>
+            <td>{{form.FirstName}}</td>
+            <td>{{form.LastName}}</td>
+            <td>{{form.Address}}</td>
+            <td>{{form.Gender}}</td>
+            <td>{{form.Field}}</td>
+            <!--<td><a href="{{form.pdfs.url}}" download  >Download</a></td>-->
+            <td>
+                <form method="POST" action="{% url 'FMS:delete_form' form.pk %}">
+
+                    {% csrf_token %}
+
+                    <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <div class="container">
+            <div class="row">
+                <div class = "card-body">
+                    <h1 class="card-title">NO RESULT!!</h1>
+                </div>
+            </div>
+        </div>
+    {%endif%}
+    </tbody>
+
+</table>
+
+<script type="text/javascript">document.getElementbyId('id_q').value='{{query}}'</script>
+
+{%endblock%}

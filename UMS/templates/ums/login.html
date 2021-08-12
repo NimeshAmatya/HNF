@@ -1,0 +1,27 @@
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+	
+	{% csrf_token %}
+
+		<h2> Log In </h2>
+
+		<input type="text" name="username" placeholder="username"><br>
+		<input type="password" name="password" placeholder="password"><br>
+		
+	
+	<br>
+
+	<button class="btn btn-primary btn-sm" type="submit" >Login</button>
+	<a href="/reset_password">Forget Password?</a>
+
+</form>
+	<div>
+		{% for message in messages %}
+		<h3>{{message}}</h3>
+		{% endfor %}
+		
+	</div>
+
+
+{% endblock %}
